@@ -5,7 +5,7 @@ module SidebarHelper
 
   def active_class(link_path)
     controller_name = link_path.split("/").second
-    current_page?(controller: controller_name, action: action_name) ? "active" : ""
+    current_page?({controller: controller_name, action: action_name}) ? "active" : ""
   rescue ActionController::UrlGenerationError
     ""
   end
